@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block 'content' %}
+<div class="card-group" style="margin-top: 40px;">
+    <div class="card">
+      <img src="{% static 'img/flan1.jpg' %}" class="card-img-top" alt="Los Angeles Skyscrapers" />
+      <div class="card-body">
+        <h5 class="card-title">Flan Vainilla</h5>
+        <p class="card-text">
+          This is a wider card with supporting text below as a natural lead-in to
+          additional content. This content is a little bit longer.
+        </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'img/flan2.jpg' %}" class="card-img-top" alt="Los Angeles Skyscrapers" />
+      <div class="card-body">
+        <h5 class="card-title">Flan Caramelo</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'img/flan3.jpg' %}" class="card-img-top" alt="Los Angeles Skyscrapers" />
+      <div class="card-body">
+        <h5 class="card-title">Flan Chocolate</h5>
+        <p class="card-text">
+          This is a wider card with supporting text below as a natural lead-in to
+          additional content. This card has even longer content than the first to show
+          that equal height action.
+        </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+{% endblock 'content' %}
+
+

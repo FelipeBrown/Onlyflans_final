@@ -1,0 +1,30 @@
+{% load static %}
+{% block 'header' %}
+
+<header>
+  
+  <!-- Background image -->
+  <div
+    class="p-5 text-center bg-image"
+    style="
+      background-image: url('{% static 'img/flan.jpg' %}');
+      height: 600px;
+      background-size: cover; 
+      background-position: center; 
+    "
+  >
+  <div class="mask" style="background-color: rgba(255, 193, 7, 0.4); padding: 80px; margin-top: 80px;">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-black">
+          <h1 class="mb-3">Bienvenidos</h1>
+          <h3 class="mb-3">a ONLYFLANS</h3>
+          <a data-mdb-ripple-init class="btn btn-outline-dark btn-lg" href="#!" role="button">Contáctanos</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
+
+{% endblock 'header' %}
