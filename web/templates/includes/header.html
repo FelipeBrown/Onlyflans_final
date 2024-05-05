@@ -2,24 +2,24 @@
 {% block 'header' %}
 
 <header>
-  
-  <!-- Background image -->
+<!-- Background image -->
   <div
     class="p-5 text-center bg-image"
     style="
-      background-image: url('{% static 'img/flan.jpg' %}');
-      height: 600px;
-      background-size: cover; 
-      background-position: center; 
+      background-image: url('{% static 'img/flan2.jpg' %}');
+      height: 100vh; /* Establece la altura al 100% de la altura de la ventana del navegador */
+      background-size: cover; /* Ajusta automáticamente el tamaño de la imagen para cubrir todo el contenedor */
+      background-position: center; /* Centra la imagen */
     "
   >
-  <div class="mask" style="background-color: rgba(255, 193, 7, 0.4); padding: 80px; margin-top: 80px;">
+    <div class="mask" style="background-color: rgba(255, 193, 7, 0.5); margin: 60px; padding: 40px;">
       <div class="d-flex justify-content-center align-items-center h-100">
-        <div class="text-black">
-          <h1 class="mb-3">Bienvenidos</h1>
-          <h3 class="mb-3">a ONLYFLANS</h3>
-          <a data-mdb-ripple-init class="btn btn-outline-dark btn-lg" href="#!" role="button">Contáctanos</a>
-          
+        <div class="text-white">
+          <h1 class="mb-3" style="color: rgba(0, 0, 0, 1);">Bienvenidos a</h1>
+          <h1 class="mb-3" style="color: rgba(118, 119, 206, 1);">ONLYFLANS</h1>
+          <a data-mdb-ripple-init class="btn btn-outline-dark btn-lg" href="{% url 'contact_form' %}" role="button"
+          >Contáctanos</a
+          >
         </div>
       </div>
     </div>
@@ -27,4 +27,7 @@
   <!-- Background image -->
 </header>
 
+
+
 {% endblock 'header' %}
+

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'header' %}
+<h1 class="text-center m-4">Contáctanos</h1>
+{% endblock 'header' %}
+
+{% block 'content' %}
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6" style="margin-top: 20px;">
+      <form style="width: 26rem;" method="POST">
+        {% csrf_token %}
+
+        {{ form.non_field_errors }}
+
+        <!-- Name input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form4Example1">{{ form.customer_name.label_tag }}</label>
+          <input type="text" id="form4Example1" class="form-control" name="customer_name" />
+        </div>
+      
+        <!-- Email input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form4Example2">{{ form.customer_email.label_tag }}</label>
+          <input type="text" id="form4Example2" class="form-control" name="customer_email" />
+        </div>
+        <div class="text-danger">
+          {{ form.customer_email.errors }}
+        </div>
+      
+        <!-- Message input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form4Example3">{{ form.message.label_tag }}</label>
+          <textarea class="form-control" id="form4Example3" rows="4" name="message"></textarea>
+        </div>
+      
+        <!-- Submit button -->
+        <button data-mdb-ripple-init type="submit" class="btn btn-warning btn-block mb-4">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock 'content' %}
+
+
