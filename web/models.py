@@ -14,6 +14,7 @@ class Flan(models.Model):
     imagen = models.URLField(blank=False)
     slug = models.SlugField(unique=True, max_length=255,blank=True)
     is_private = models.BooleanField(default=False)
+    precio = models.DecimalField(max_digits=10 ,decimal_places=3, default=500)
     
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -33,4 +34,11 @@ class Contacto(models.Model):
   def __str__(self):
         return self.customer_name
     
+
+class CalificacionFlan(models.Model):
+    flan = models.ForeignKey(Flan, on_delete=models.CASCADE)
+    calificacion = models.IntegerField(choices=((1, '1 estrella'), (2, '2 estrellas'), (3, '3 estrellas'), (4, '4 estrellas'), (5, '5 estrellas')))
+
+    def __str__(self):
+        return f"{self.flan.name} - {self.calificacion} estrellas"
         

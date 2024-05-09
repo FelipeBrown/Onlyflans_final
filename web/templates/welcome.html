@@ -1,30 +1,53 @@
 {% extends 'base.html' %}
 
 {% block 'header' %}
-
-<h1>Bienvenido Cliente</h1>
-
+<div class="container mt-4">
+  <div class="row justify-content-between align-items-center">
+    <div class="col-auto">
+      {% if nombre_usuario %}
+        <h4 class="mb-0">Hola {{ nombre_usuario }}, que bueno verte!</h4>
+      {% else %}
+        <h3 class="mb-0">Bienvenido Cliente</h3>
+      {% endif %}
+    </div>
+    <div class="col-auto">
+      <!-- Agregar cualquier otro contenido del encabezado aquí -->
+    </div>
+  </div>
+</div>
 {% endblock 'header' %}
 
 {% block 'content' %}
 
-<div class="container mx-auto pt-5">
-  <div class="row row-cols1 row-cols-md-3 row-cols-lg-5 g-4">
+<section class="container mx-auto pt-5">
+  <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4 row-cols-xl-5 g-3">
     {% for flan in flanes %}
     <div class="col">
-      <div class="card h-100 ">
-        <img src="{{ flan.imagen }}" height="150px" class="card-img-top" alt="{{flan.slug}}">
-        <div class="card-body">
+      <div class="card h-100">
+       <img src="{{ flan.imagen }}" class="card-img-top" alt="{{ flan.slug }}" style="height: 200px; object-fit: cover;">
+       
+       <div class="card-body">
           <h5 class="card-title">{{ flan.name }}</h5>
           <p class="card-text">{{ flan.descripcion }}</p>
         </div>
-        <div class="card-footer bg-warning">
-          <small class="text-body">Más información</small>
+        <div class="card-footer" style="color: #7477ce;">
+          <small class="text-body-light"><a href="{% url 'flan_details' flan.id %}">Más información</a></small>
+        </div>
+        <div class="card-footer d-flex align-items-center">
+          <p class="me-2 mb-0">Precio:</p>
+          <p class="mb-0">{{ flan.precio }}</p>
         </div>
       </div>
     </div>
     {% endfor %}
   </div>
-</div>
+</section>
 
 {% endblock 'content' %}
+
+
+
+
+
+
+
