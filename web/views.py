@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Flan
+from .models import CalificacionFlan, Flan
 from .forms import ContactForm
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.decorators import login_required
@@ -51,11 +51,12 @@ def mi_vista(request):
 def calificar_flan(request, flan_id):
     if request.method == 'POST':
         rating = request.POST.get('rating')
+        print(rating)
         if rating is not None:
             try:
                 rating = int(rating)
                 # Obtener el objeto Flan
-                flan = get_object_or_404(Flan, id=flan_id)
+                flan = get_object_or_404(Flan, pk=flan_id)
                 
                 # Crear un nuevo objeto CalificacionFlan
                 calificacion_flan = CalificacionFlan.objects.create(flan=flan, calificacion=rating)

@@ -118,7 +118,7 @@
 
                   </p>
                 <hr>
-                <form id="rating-form" method="post" action="{% url 'calificar_flan' flan_id=flan.id %}">
+                <form id="rating-form" method="post" action="{% url 'calificar_flan' flan.id %}">
                     {% csrf_token %}
                     <div class="rating">
                         <input type="radio" id="star5" name="rating" value="5"><label for="star5"></label>
@@ -134,17 +134,16 @@
                     ¡Gracias por calificar este flan!
                 </div>
                 
-                <script>
+               <script>
                     document.getElementById('rating-form').addEventListener('submit', function (event) {
-                        event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+                        //event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
                         
                         // Envía la calificación mediante Ajax o cualquier método que estés utilizando
                         
                         // Muestra el mensaje de confirmación
                         document.getElementById('confirmation-message').style.display = 'block';
                     });
-                </script>
-                
+                </script> 
                 
                 
               <hr>
